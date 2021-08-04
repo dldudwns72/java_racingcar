@@ -13,7 +13,8 @@ public class Cars {
 
     public void printCar(){
         for (int i = 0; i < cars.size(); i++) {
-            System.out.println(cars.get(i).getName()+ " : " + "-");
+            Car car = cars.get(i); // 메소드 연결은 하나만 한다
+            System.out.println(car.getName()+ " : " + "-");
         }
     }
 

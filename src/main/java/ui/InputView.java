@@ -15,13 +15,13 @@ public class InputView {
 
         List<String> split_car_name = Arrays.asList(createCar.split(","));
 
-        List<Car> createCars = new ArrayList<>(); // 일급 컬렉션?
+        List<Car> createCars = new ArrayList<>();
 
         for (int i = 0; i < split_car_name.size(); i++) {
             createCars.add(new Car(split_car_name.get(i),i));
         }
 
-        Cars cars = new Cars(createCars);
+        Cars cars = new Cars(createCars);  // 일급 컬렉션?!
 
         cars.printCar();
 
