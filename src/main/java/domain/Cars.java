@@ -11,4 +11,10 @@ public class Cars {
         this.cars = cars;
     }
 
+    public void printCar(){
+        for (int i = 0; i < cars.size(); i++) {
+            System.out.println(cars.get(i).getName()+ " : " + "-");
+        }
+    }
+
 }
