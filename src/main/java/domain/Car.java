@@ -15,40 +15,4 @@ import java.util.Random;
  */
 public class Car {
 
-    private String name;
-    private int go_count = 0;
-
-    Random random = new Random();
-
-    public Car(String name) {
-        isValid(name);
-
-        this.name = name;
-    }
-
-    private void isValid(String name) {
-        if (name.length() > 5) {
-            throw new IllegalArgumentException("이름은 5자리를 넘길 수 없습니다.");
-        }
-    }
-
-    public void go(int number) {
-        int random_value = random.nextInt(9) + 1;
-
-        if (number < random_value) {
-            go_count++;
-        }
-    }
-
-    public void printCar() {
-        System.out.print(name + " : ");
-
-        for (int i = 0; i < go_count; i++) {
-            System.out.print("-");
-        }
-    }
-
-    public String getName() {
-        return name;
-    }
 }
