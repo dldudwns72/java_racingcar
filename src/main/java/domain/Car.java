@@ -44,5 +44,11 @@ public class Car {
         System.out.println(name + " : " + going_count);
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public int getMove_count() {
+        return move_count;
+    }
 }
