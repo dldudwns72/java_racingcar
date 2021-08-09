@@ -9,30 +9,30 @@ import java.util.List;
 public class ResultView {
 
     public static void printResult(List<Car> cars) {
-        List<String> winner_list = new ArrayList<>();
+        List<String> winnerList = new ArrayList<>();
         String winner = null;
-        int max_count = 0;
+        int maxCount = 0;
 
         for (int i = 0; i < cars.size(); i++) {
-            String current_car = cars.get(i).getName();
-            int last_count = cars.get(i).getMove_count();
+            String currentCar = cars.get(i).getName();
+            int lastCount = cars.get(i).getMoveCount();
 
-            if (last_count > max_count) {
+            if (lastCount > maxCount) {
 
-                winner = current_car;
-                max_count = last_count;
+                winner = currentCar;
+                maxCount = lastCount;
             }
 
-            if (max_count == last_count) {
-                winner_list.add(winner);
+            if (maxCount == lastCount) {
+                winnerList.add(winner);
             }
 
         }
 
         System.out.println("실행 결과");
 
-        for (int i = 0; i < winner_list.size(); i++) {
-            System.out.print(winner_list.get(i) + " ");
+        for (int i = 0; i < winnerList.size(); i++) {
+            System.out.print(winnerList.get(i) + " ");
         }
 
         System.out.print("가 최종 우승했습니다.");

@@ -18,17 +18,17 @@ public class InputView {
 
         Scanner scanner = new Scanner(System.in);
 
-        String input_names = scanner.nextLine();
+        String inputNames = scanner.nextLine();
 
-        List<String> split_input_names = Arrays.asList(input_names.split(","));
+        List<String> splitInputNames = Arrays.asList(inputNames.split(","));
 
-        List<Car> car_list = new ArrayList<>();
+        List<Car> carList = new ArrayList<>();
 
-        for (int i = 0; i < split_input_names.size(); i++) {
-            car_list.add(new Car(split_input_names.get(i)));
+        for (int i = 0; i < splitInputNames.size(); i++) {
+            carList.add(new Car(splitInputNames.get(i)));
         }
 
-        return new Cars(car_list);
+        return new Cars(carList);
     }
 
     public static int Racing() {

@@ -5,21 +5,21 @@ import java.util.Random;
 public class Car {
     private String name;
 
-    private int move_count;
+    private int moveCount;
 
 
-    public Car(String name,int move_count){
+    public Car(String name,int moveCount){
         this.name = name;
-        this.move_count = move_count;
+        this.moveCount = moveCount;
     }
 
     public Car(String name){
         this.name = name;
     }
 
-    public void move(int attempt_count){
+    public void move(int attemptCount){
 
-        for (int i = 0; i < attempt_count; i++) {
+        for (int i = 0; i < attemptCount; i++) {
             Random random = new Random();
 
             // 0~10사이의 난수
@@ -27,7 +27,7 @@ public class Car {
 
             if(random_number > 5){
                 // 해당 move_count 값을 어떻게 유지하고 있는가.
-                move_count++;
+                moveCount++;
             }
         }
 
@@ -37,7 +37,7 @@ public class Car {
         StringBuilder going_count = new StringBuilder();
         going_count.append("-");
 
-        for (int i = 1; i < move_count; i++) {
+        for (int i = 1; i < moveCount; i++) {
             going_count.append("-");
         }
 
@@ -48,7 +48,7 @@ public class Car {
         return name;
     }
 
-    public int getMove_count() {
-        return move_count;
+    public int getMoveCount() {
+        return moveCount;
     }
 }

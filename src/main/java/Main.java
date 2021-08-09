@@ -11,16 +11,16 @@ public class Main {
 
         Cars cars = InputView.Start(); // List<Car> Car객체를 담고 있는 Cars 객체 생성
 
-        int attempt_count = InputView.Racing(); // 게임 시도 횟수
+        int attemptCount = InputView.Racing(); // 게임 시도 횟수
 
         // 시도한 횟수만큼 게임을 돈다.
-        for (int attempt_index = 0; attempt_index < attempt_count; attempt_index++) {
-            cars.printNames(attempt_index + 1);
+        for (int attemptIndex = 0; attemptIndex < attemptCount; attemptIndex++) {
+            cars.printNames(attemptIndex + 1);
         }
 
-        List<Car> result_car = cars.getCars();
+        List<Car> resultCar = cars.getCars();
 
-        ResultView.printResult(result_car);
+        ResultView.printResult(resultCar);
 
     }
 
