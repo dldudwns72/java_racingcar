@@ -11,14 +11,9 @@ public class CarTest {
     @Test
     @DisplayName("전진")
     public void 전진(){
-        Car car = new Car("lee"){
-            @Override
-            protected int getRandomNumber() {
-                return 6;
-            }
-        };
+        Car car = new Car("lee");
 
-        car.move();
+        car.move(6);
 
         assertThat(car.getMoveCount()).isEqualTo(1);
     }
@@ -26,14 +21,9 @@ public class CarTest {
     @Test
     @DisplayName("정지")
     public void 정지(){
-        Car car = new Car("lee"){
-            @Override
-            protected int getRandomNumber() {
-                return 4;
-            }
-        };
+        Car car = new Car("lee");
 
-        car.move();
+        car.move(4);
 
         assertThat(car.getMoveCount()).isEqualTo(0);
     }

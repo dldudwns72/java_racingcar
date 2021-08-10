@@ -1,5 +1,6 @@
 import domain.Car;
 import domain.Cars;
+import domain.Racing;
 import ui.InputView;
 import ui.ResultView;
 
@@ -9,17 +10,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Cars cars = InputView.Start();
 
-        int attemptCount = InputView.Racing();
+        List<Car> cars = InputView.start();
 
-        for (int attemptIndex = 0; attemptIndex < attemptCount; attemptIndex++) {
-            cars.printNames(attemptIndex + 1);
-        }
+        int attemptCount = InputView.attempt();
 
-        List<Car> resultCar = cars.getCars();
+        Racing racing = new Racing(cars,attemptCount);
 
-        ResultView.printResult(resultCar);
+        ResultView.printResult(cars);
 
     }
 

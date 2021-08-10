@@ -1,7 +1,5 @@
 package domain;
 
-import java.util.Random;
-
 public class Car {
     private String name;
 
@@ -11,25 +9,10 @@ public class Car {
         this.name = name;
     }
 
-    public void move() {
-        if (getRandomNumber() > 5) {
+    public void move(int randomNo) {
+        if (randomNo > 5) {
             this.moveCount++;
         }
-    }
-
-    public String print() {
-        StringBuilder goingCount = new StringBuilder();
-        goingCount.append("-");
-
-        for (int i = 1; i < moveCount; i++) {
-            goingCount.append("-");
-        }
-
-        return name + " : " + goingCount;
-    }
-
-    protected int getRandomNumber(){
-        return new Random().nextInt(10);
     }
 
     public String getName() {
