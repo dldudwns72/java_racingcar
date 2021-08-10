@@ -22,11 +22,9 @@ public class Car {
         for (int i = 0; i < attemptCount; i++) {
             Random random = new Random();
 
-            // 0~10사이의 난수
             int random_number = random.nextInt(10);
 
             if(random_number > 5){
-                // 해당 move_count 값을 어떻게 유지하고 있는가.
                 moveCount++;
             }
         }

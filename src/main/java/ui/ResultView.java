@@ -1,7 +1,6 @@
 package ui;
 
 import domain.Car;
-import domain.Cars;
 
 import java.util.ArrayList;
 import java.util.List;
