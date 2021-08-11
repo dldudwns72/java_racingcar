@@ -9,34 +9,49 @@ public class Racing {
     private List<Car> cars;
     private int attemptCount;
 
-    public Racing(List<Car> cars, int attemptCount){
+    public Racing(List<Car> cars, int attemptCount) {
         this.cars = cars;
         this.attemptCount = attemptCount;
     }
 
-    public List<Car> start(){
+    public List<Car> start() {
+        // lee,jye,min,jun,kim
         List<Car> result = new ArrayList<>();
 
-        System.out.println("attemptCount" + attemptCount);
+        System.out.println("실행결과");
+
         for (int attemptIndex = 0; attemptIndex < attemptCount; attemptIndex++) {
-            Car car = inGame(cars.get(attemptIndex),attemptIndex);
-            result.add(car);
+            result = inGame(cars);
+            System.out.println("");
         }
+
+
 
         return result;
     }
 
-    private Car inGame(Car car, int attemptIndex){
+    private List<Car> inGame(List<Car> cars) {
 
-        for (int i = 0; i < attemptIndex+1; i++) {
-            System.out.println("attemptIndex" + attemptIndex);
-
+        for (int i = 0; i < cars.size(); i++) {
             int randomNo = new Random().nextInt(10);
-            car.move(randomNo);
+            cars.get(i).move(randomNo);
+
+            printCars(cars.get(i).getName(),cars.get(i).getMoveCount());
+
         }
 
-        return car;
+        return cars;
     }
+
+    private void printCars(String carName, int carMoveCount){
+        StringBuilder carMoveCountChar = new StringBuilder();
+        for (int i = 0; i < carMoveCount ; i++) {
+            carMoveCountChar.append("-");
+        }
+        System.out.println(carName + " : " + carMoveCountChar);
+
+    }
+
 
 
 }

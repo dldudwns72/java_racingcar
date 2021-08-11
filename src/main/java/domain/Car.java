@@ -10,7 +10,7 @@ public class Car {
     }
 
     public void move(int randomNo) {
-        if (randomNo > 5) {
+        if (randomNo > 3) {
             this.moveCount++;
         }
     }
@@ -21,5 +21,13 @@ public class Car {
 
     public int getMoveCount() {
         return moveCount;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "name='" + name + '\'' +
+                ", moveCount=" + moveCount +
+                '}';
     }
 }

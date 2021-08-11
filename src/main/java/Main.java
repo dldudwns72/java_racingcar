@@ -7,9 +7,7 @@ import ui.ResultView;
 import java.util.List;
 
 public class Main {
-
     public static void main(String[] args) {
-
 
         List<Car> cars = InputView.start();
 
@@ -17,7 +15,9 @@ public class Main {
 
         Racing racing = new Racing(cars,attemptCount);
 
-        ResultView.printResult(cars);
+        List<Car> racingResult = racing.start();
+
+        ResultView.printResult(racingResult);
 
     }
 

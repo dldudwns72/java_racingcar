@@ -10,7 +10,7 @@ public class Cars {
         this.cars = cars;
     }
 
-    public void printNames(int attempt_count) {
+    public void move(int attempt_count) {
         for (int i = 0; i < cars.size(); i++) {
             int randomNo = new Random().nextInt(10);
             Car car = cars.get(i);
@@ -19,7 +19,10 @@ public class Cars {
         System.out.println("");
     }
 
-    public List<Car> getCars() {
-        return cars;
+    @Override
+    public String toString() {
+        return "Cars{" +
+                "cars=" + cars +
+                '}';
     }
 }
