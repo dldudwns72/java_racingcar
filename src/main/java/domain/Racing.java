@@ -25,8 +25,6 @@ public class Racing {
             System.out.println("");
         }
 
-
-
         return result;
     }
 
