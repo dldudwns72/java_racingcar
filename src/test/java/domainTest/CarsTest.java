@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class CarsTest {
 
     @Test
-    @DisplayName("")
+    @DisplayName("Car List 생성 후 이름 정상 출력")
     public void generate(){
         List<Car> carList = new ArrayList<>();
 
@@ -26,6 +26,7 @@ public class CarsTest {
 
         assertThat(result1).isEqualTo("lee");
         assertThat(result2).isEqualTo("hye");
-
     }
+
+
 }
