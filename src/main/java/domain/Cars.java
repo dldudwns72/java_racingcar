@@ -9,6 +9,10 @@ public class Cars {
         this.cars = cars;
     }
 
+    public List<Car> getCars() {
+        return cars;
+    }
+
     @Override
     public String toString() {
         return "Cars{" +
