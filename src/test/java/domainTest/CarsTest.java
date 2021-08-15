@@ -21,12 +21,48 @@ public class CarsTest {
         carList.add(new Car("hye"));
 
         Cars cars = new Cars(carList);
-        String result1 = cars.getCars().get(0).getName();
-        String result2 = cars.getCars().get(1).getName();
 
-        assertThat(result1).isEqualTo("lee");
-        assertThat(result2).isEqualTo("hye");
+        Car result0 = cars.getCars().get(0);
+        Car result1 = cars.getCars().get(1);
+
+
+        assertThat(result0.getName()).isEqualTo("lee");
+        assertThat(result1.getName()).isEqualTo("hye");
     }
+
+    @Test
+    @DisplayName("Cars 세번 움직임, 두대는 2칸 전진 한대는 3칸전진")
+    public void CarsThirdMove(){
+        List<Car> carList = new ArrayList<>();
+
+        carList.add(new Car("lee"));
+        carList.add(new Car("hye"));
+        carList.add(new Car("kwak"));
+
+        Cars cars = new Cars(carList);
+
+        Car leeCar = cars.getCars().get(0);
+        leeCar.move(8);
+        leeCar.move(8);
+        leeCar.move(2);
+
+        Car hyeCar = cars.getCars().get(1);
+        hyeCar.move(8);
+        hyeCar.move(8);
+        hyeCar.move(8);
+
+        Car kwakCar = cars.getCars().get(2);
+        kwakCar.move(8);
+        kwakCar.move(8);
+        kwakCar.move(8);
+
+        assertThat(leeCar.getMoveCount()).isEqualTo(2);
+        assertThat(hyeCar.getMoveCount()).isEqualTo(3);
+        assertThat(kwakCar.getMoveCount()).isEqualTo(3);
+    }
+
+
+
 
 
 }
