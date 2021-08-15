@@ -15,7 +15,6 @@ public class Racing {
     }
 
     public List<Car> start() {
-        // lee,jye,min,jun,kim
         List<Car> result = new ArrayList<>();
 
         System.out.println("실행결과");

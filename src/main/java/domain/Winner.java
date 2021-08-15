@@ -1,12 +1,12 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Winner {
 
     private List<Car> cars;
-    int maxCount = 0;
     List<String> winners = new ArrayList<>();
 
     public Winner(List<Car> cars) {
@@ -14,33 +14,32 @@ public class Winner {
     }
 
     public void judge() {
+
+        int maxCount = getMaxCount(cars);
+
         for (int i = 0; i < cars.size(); i++) {
-
-            if (i == 0) {
-                if (cars.get(0).getMoveCount() < cars.get(1).getMoveCount()) {
-                    maxCount = cars.get(1).getMoveCount();
-                    winners.add(cars.get(1).getName());
-                } else {
-                    maxCount = cars.get(0).getMoveCount();
-                    winners.add(cars.get(0).getName());
-                }
-            } else if (i < cars.size() - 1) {
-                int nextCount = cars.get(i + 1).getMoveCount();
-
-                if (maxCount < nextCount) {
-                    maxCount = nextCount;
-                    winners.add(cars.get(i + 1).getName());
-                }else if(maxCount == nextCount){
-                    maxCount = nextCount;
-                    winners.add(cars.get(i + 1).getName());
-                }
-
-            }
-
+            getWinners(cars.get(i),maxCount);
         }
 
         String winnerPrint = String.join(", ", winners);
 
         System.out.println(winnerPrint + "가 최종 우승했습니다.");
     }
+
+    private int getMaxCount(List<Car> cars) {
+        List<Integer> moveCountList = new ArrayList<>();
+
+        for (int i = 0; i < cars.size(); i++) {
+            moveCountList.add(cars.get(i).getMoveCount());
+        }
+
+        return Collections.max(moveCountList);
+    }
+
+    private void getWinners(Car car, int maxCount){
+        if(car.getMoveCount() == maxCount){
+            winners.add(car.getName());
+        }
+    }
+
 }
