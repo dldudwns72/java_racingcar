@@ -2,6 +2,7 @@ package domainTest;
 
 import domain.Car;
 import domain.Cars;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -12,46 +13,48 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class CarsTest {
 
-    @Test
-    @DisplayName("Car List 생성 후 이름 정상 출력")
-    public void generate(){
-        List<Car> carList = new ArrayList<>();
+    private List<Car> carList = new ArrayList<>();
 
-        carList.add(new Car("lee"));
-        carList.add(new Car("hye"));
+    private Car leeCar = null;
+    private Car hyeCar = null;
+    private Car kwakCar = null;
 
-        Cars cars = new Cars(carList);
-
-        Car result0 = cars.getCars().get(0);
-        Car result1 = cars.getCars().get(1);
-
-
-        assertThat(result0.getName()).isEqualTo("lee");
-        assertThat(result1.getName()).isEqualTo("hye");
-    }
-
-    @Test
-    @DisplayName("Cars 세번 움직임, 두대는 2칸 전진 한대는 3칸전진")
-    public void CarsThirdMove(){
-        List<Car> carList = new ArrayList<>();
-
+    @BeforeEach
+    public void setUp() {
         carList.add(new Car("lee"));
         carList.add(new Car("hye"));
         carList.add(new Car("kwak"));
 
         Cars cars = new Cars(carList);
 
-        Car leeCar = cars.getCars().get(0);
+        leeCar = cars.getCars().get(0);
+        hyeCar = cars.getCars().get(1);
+        kwakCar = cars.getCars().get(2);
+    }
+
+    @Test
+    @DisplayName("Car List 생성 후 이름 정상 출력")
+    public void generate() {
+
+        assertThat(leeCar.getName()).isEqualTo("lee");
+        assertThat(hyeCar.getName()).isEqualTo("hye");
+        assertThat(kwakCar.getName()).isEqualTo("kwak");
+
+    }
+
+    @Test
+    @DisplayName("Cars 세번 움직임, 두대는 2칸 전진 한대는 3칸전진")
+    public void CarsThirdMove() {
+        Cars cars = new Cars(carList);
+
         leeCar.move(8);
         leeCar.move(8);
         leeCar.move(2);
 
-        Car hyeCar = cars.getCars().get(1);
         hyeCar.move(8);
         hyeCar.move(8);
         hyeCar.move(8);
 
-        Car kwakCar = cars.getCars().get(2);
         kwakCar.move(8);
         kwakCar.move(8);
         kwakCar.move(8);
@@ -60,9 +63,6 @@ public class CarsTest {
         assertThat(hyeCar.getMoveCount()).isEqualTo(3);
         assertThat(kwakCar.getMoveCount()).isEqualTo(3);
     }
-
-
-
 
 
 }
