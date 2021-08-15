@@ -45,7 +45,6 @@ public class CarsTest {
     @Test
     @DisplayName("Cars 세번 움직임, 두대는 2칸 전진 한대는 3칸전진")
     public void CarsThirdMove() {
-        Cars cars = new Cars(carList);
 
         leeCar.move(8);
         leeCar.move(8);

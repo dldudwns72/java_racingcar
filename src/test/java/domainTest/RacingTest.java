@@ -12,11 +12,10 @@ import java.util.List;
 
 public class RacingTest {
 
-    private List<Car> carList;
+    private List<Car> carList = new ArrayList<>();
 
     @BeforeEach
     public void setUp(){
-        carList = new ArrayList<>();
 
         carList.add(new Car("kwak"));
         carList.add(new Car("lee"));
