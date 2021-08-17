@@ -31,9 +31,12 @@ public class Racing {
 
         for (int i = 0; i < cars.size(); i++) {
             int randomNo = new Random().nextInt(10);
-            cars.get(i).move(randomNo);
 
-            printCars(cars.get(i).getName(),cars.get(i).getMoveCount());
+            Car car = cars.get(i);
+
+            car.move(randomNo);
+
+            printCars(car.getName(),car.getMoveCount());
 
         }
 

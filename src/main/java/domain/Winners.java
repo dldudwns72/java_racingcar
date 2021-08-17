@@ -30,7 +30,8 @@ public class Winners {
         List<Integer> moveCountList = new ArrayList<>();
 
         for (int i = 0; i < cars.size(); i++) {
-            moveCountList.add(cars.get(i).getMoveCount());
+            Car car = cars.get(i);
+            moveCountList.add(car.getMoveCount());
         }
 
         return Collections.max(moveCountList);
