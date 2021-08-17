@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Winner {
+public class Winners {
 
     private List<Car> cars;
-    List<String> winners = new ArrayList<>();
+    private List<String> winners = new ArrayList<>();
 
-    public Winner(List<Car> cars) {
+    public Winners(List<Car> cars) {
         this.cars = cars;
     }
 

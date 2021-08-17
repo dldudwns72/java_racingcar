@@ -1,21 +1,18 @@
 package ui;
 
 import domain.Car;
-import domain.Winner;
+import domain.Winners;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ResultView {
 
     public static void printResult(List<Car> cars) {
 
-        Winner winner = new Winner(cars);
+        Winners winners = new Winners(cars);
 
-        winner.judge();
+        winners.judge();
 
     }
-
-
 
 }
