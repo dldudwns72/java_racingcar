@@ -26,9 +26,6 @@ public class RacingTest {
     @Test
     @DisplayName("레이싱 시작")
     public void start(){
-        Racing racing = new Racing(carList,3);
-
-        racing.start();
 
     }
 }

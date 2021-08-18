@@ -1,5 +1,6 @@
 package domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cars {
@@ -13,10 +14,4 @@ public class Cars {
         return cars;
     }
 
-    @Override
-    public String toString() {
-        return "Cars{" +
-                "cars=" + cars +
-                '}';
-    }
 }

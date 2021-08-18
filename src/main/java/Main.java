@@ -9,13 +9,13 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        List<Car> cars = InputView.start();
+        Cars cars = InputView.start();
 
         int attemptCount = InputView.attempt();
 
-        Racing racing = new Racing(cars,attemptCount);
+        Racing racing = new Racing(cars, attemptCount);
 
-        List<Car> racingResult = racing.start();
+        Cars racingResult = racing.start();
 
         ResultView.printResult(racingResult);
 
