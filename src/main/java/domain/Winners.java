@@ -13,7 +13,7 @@ public class Winners {
         this.cars = cars;
     }
 
-    public void judge() {
+    public String judge() {
 
         int maxCount = getMaxCount(cars);
 
@@ -24,7 +24,7 @@ public class Winners {
 
         String winnerPrint = String.join(", ", winners);
 
-        System.out.println(winnerPrint + "가 최종 우승했습니다.");
+        return winnerPrint;
     }
 
     private int getMaxCount(Cars cars) {

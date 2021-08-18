@@ -12,7 +12,9 @@ public class ResultView {
 
         Winners winners = new Winners(cars);
 
-        winners.judge();
+        String winnerPrint = winners.judge();
+
+        System.out.println(winnerPrint + "가 최종 우승했습니다.");
 
     }
 
