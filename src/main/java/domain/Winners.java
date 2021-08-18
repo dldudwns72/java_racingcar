@@ -18,7 +18,8 @@ public class Winners {
         int maxCount = getMaxCount(cars);
 
         for (int i = 0; i < cars.getCars().size(); i++) {
-            getWinners(cars.getCars().get(i),maxCount);
+            Car car = cars.getCars().get(i);
+            getWinners(car,maxCount);
         }
 
         String winnerPrint = String.join(", ", winners);
