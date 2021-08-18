@@ -2,6 +2,7 @@ package ui;
 
 
 import domain.Car;
+import domain.Cars;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,11 +11,11 @@ import java.util.Scanner;
 
 public class InputView {
 
-    public static List<Car> start(){
+    public static Cars start(){
 
         List<String> carNames = inputCars();
 
-        List<Car> carList = createCars(carNames);
+        Cars carList = createCars(carNames);
 
         return carList;
     }
@@ -30,12 +31,15 @@ public class InputView {
         return Arrays.asList(inputNames.split(","));
     }
 
-    private static List<Car> createCars(List<String> cars){
-        List<Car> carList = new ArrayList<>();
+    private static Cars createCars(List<String> carNames){
+        List<Car> carLists = new ArrayList<>();
 
-        for (int i = 0; i < cars.size(); i++) {
-            carList.add(new Car(cars.get(i)));
+        for (int i = 0; i < carNames.size(); i++) {
+            carLists.add(new Car(carNames.get(i)));
         }
+
+        Cars carList = new Cars(carLists);
+
 
         return carList;
     }

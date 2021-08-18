@@ -6,33 +6,33 @@ import java.util.Random;
 
 public class Racing {
 
-    private List<Car> cars;
+    private Cars cars;
     private int attemptCount;
 
-    public Racing(List<Car> cars, int attemptCount) {
+    public Racing(Cars cars, int attemptCount) {
         this.cars = cars;
         this.attemptCount = attemptCount;
     }
 
-    public List<Car> start() {
-        List<Car> result = new ArrayList<>();
+    public Cars start() {
 
         System.out.println("실행결과");
 
         for (int attemptIndex = 0; attemptIndex < attemptCount; attemptIndex++) {
-            result = inGame(cars);
+
+            inGame(cars);
             System.out.println("");
         }
 
-        return result;
+        return cars;
     }
 
-    private List<Car> inGame(List<Car> cars) {
+    private Cars inGame(Cars cars) {
 
-        for (int i = 0; i < cars.size(); i++) {
+        for (int i = 0; i < cars.getCars().size(); i++) {
             int randomNo = new Random().nextInt(10);
 
-            Car car = cars.get(i);
+            Car car = cars.getCars().get(i);
 
             car.move(randomNo);
 
