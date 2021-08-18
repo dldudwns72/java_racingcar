@@ -15,6 +15,8 @@ public class Main {
 
         Racing racing = new Racing(cars, attemptCount);
 
+        System.out.println("실행결과");
+
         Cars racingResult = racing.start();
 
         ResultView.printResult(racingResult);

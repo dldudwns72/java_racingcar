@@ -16,8 +16,6 @@ public class Racing {
 
     public Cars start() {
 
-        System.out.println("실행결과");
-
         for (int attemptIndex = 0; attemptIndex < attemptCount; attemptIndex++) {
 
             inGame(cars);
