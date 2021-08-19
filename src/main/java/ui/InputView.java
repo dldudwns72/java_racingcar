@@ -1,6 +1,7 @@
 package ui;
 
 
+import domain.AttemptCount;
 import domain.Car;
 import domain.Cars;
 
@@ -20,7 +21,6 @@ public class InputView {
         return carList;
     }
 
-    // static 메소드로 선언해야 하는 이유?
     private static List<String> inputCars(){
         System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
 
@@ -44,12 +44,12 @@ public class InputView {
         return carList;
     }
 
-    public static int attempt() {
+    public static AttemptCount attempt() {
         System.out.println("시도할 회수는 몇회인가요?");
 
         Scanner scanner = new Scanner(System.in);
 
-        int attempt_count = scanner.nextInt();
+        AttemptCount attempt_count = new AttemptCount(scanner.nextInt());
 
         return attempt_count;
 

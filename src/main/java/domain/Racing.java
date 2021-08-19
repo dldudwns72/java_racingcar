@@ -7,16 +7,16 @@ import java.util.Random;
 public class Racing {
 
     private Cars cars;
-    private int attemptCount;
+    private AttemptCount attemptCount;
 
-    public Racing(Cars cars, int attemptCount) {
+    public Racing(Cars cars, AttemptCount attemptCount) {
         this.cars = cars;
         this.attemptCount = attemptCount;
     }
 
     public Cars start() {
 
-        for (int attemptIndex = 0; attemptIndex < attemptCount; attemptIndex++) {
+        for (int attemptIndex = 0; attemptIndex < attemptCount.getAttemptCount(); attemptIndex++) {
 
             inGame(cars);
             System.out.println("");

@@ -1,3 +1,4 @@
+import domain.AttemptCount;
 import domain.Car;
 import domain.Cars;
 import domain.Racing;
@@ -11,7 +12,7 @@ public class Main {
 
         Cars cars = InputView.start();
 
-        int attemptCount = InputView.attempt();
+        AttemptCount attemptCount = InputView.attempt();
 
         Racing racing = new Racing(cars, attemptCount);
 
