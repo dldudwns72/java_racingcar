@@ -26,6 +26,7 @@ public class Winners {
 
         WinnerList winnerList = new WinnerList(carNames);
 
+        // 공백과 null 제거ㅎ
         winnerList.getWinnerList().removeAll(Arrays.asList("",null));
 
         String winnerPrint = String.join(", ", winnerList.getWinnerList());
