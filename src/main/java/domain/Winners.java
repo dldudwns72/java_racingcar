@@ -1,13 +1,14 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Winners {
 
     private Cars cars;
-    private List<String> winners = new ArrayList<>();
 
     public Winners(Cars cars) {
         this.cars = cars;
@@ -16,13 +17,18 @@ public class Winners {
     public String judge() {
 
         int maxCount = getMaxCount(cars);
+        List<String> carNames = new ArrayList<>();
 
         for (int i = 0; i < cars.getCars().size(); i++) {
             Car car = cars.getCars().get(i);
-            getWinners(car,maxCount);
+            carNames.add(getWinners(car, maxCount));
         }
 
-        String winnerPrint = String.join(", ", winners);
+        WinnerList winnerList = new WinnerList(carNames);
+
+        winnerList.getWinnerList().removeAll(Arrays.asList("",null));
+
+        String winnerPrint = String.join(", ", winnerList.getWinnerList());
 
         return winnerPrint;
     }
@@ -38,10 +44,15 @@ public class Winners {
         return Collections.max(moveCountList);
     }
 
-    private void getWinners(Car car, int maxCount){
-        if(car.getMoveCount() == maxCount){
-            winners.add(car.getName());
+    private String getWinners(Car car, int maxCount) {
+
+        if (car.getMoveCount() == maxCount) {
+            return car.getName();
         }
+
+        return null;
+
+
     }
 
 }
