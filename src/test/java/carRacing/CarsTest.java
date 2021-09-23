@@ -1,10 +1,14 @@
 package carRacing;
 
+import carRacing.exception.CarsException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import javax.smartcardio.CardException;
+
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class CarsTest {
 
@@ -31,6 +35,17 @@ public class CarsTest {
         assertThat(leeCar.equals(cars.getCarList().get(0)));
         assertThat(kimCar.equals(cars.getCarList().get(1)));
         assertThat(hyeCar.equals(cars.getCarList().get(2)));
-
     }
+
+    @Test
+    @DisplayName("구분자를 쉼표로 하지 않았을 떄 에러 발생")
+    public void splitErrorCars(){
+        assertThatThrownBy(()->{
+            inputNames = "lee:kim:hye";
+            Cars cars = new Cars(inputNames);
+        }).isInstanceOf(CarsException.class);
+    }
+
+
+
 }
