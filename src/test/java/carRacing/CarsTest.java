@@ -46,6 +46,15 @@ public class CarsTest {
         }).isInstanceOf(CarsException.class);
     }
 
+    @Test
+    @DisplayName("자동차가 1대 일 경우 에러 발생")
+    public void minCarsCount(){
+        assertThatThrownBy(()->{
+            inputNames = "lee";
+            Cars cars = new Cars(inputNames);
+        }).isInstanceOf(CarsException.class);
+    }
+
 
 
 }
