@@ -27,8 +27,27 @@ public class CarTest {
         assertThatThrownBy(() -> {
             Car car = new Car(1, "leeyoungjun");
         }).isInstanceOf(CarException.class);
+    }
 
+    @Test
+    @DisplayName("전진")
+    public void go(){
+        Car car = new Car(1, "lee");
 
+        car.move(6);
+        car.move(4);
+
+        assertThat(car.getPosition()).isEqualTo(2);
+    }
+
+    @Test
+    @DisplayName("전진")
+    public void stop(){
+        Car car = new Car(1, "lee");
+
+        car.move(4);
+
+        assertThat(car.getPosition()).isEqualTo(1);
     }
 
 

@@ -29,7 +29,6 @@ public class CarsTest {
     @Test
     @DisplayName("N개의 자동차를 가지는 Cars 객체 생성")
     public void createCars() {
-
         Cars cars = new Cars(inputNames);
 
         assertThat(leeCar.equals(cars.getCarList().get(0)));

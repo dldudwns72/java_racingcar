@@ -9,15 +9,21 @@ public class Car {
     private int position;
     private String name;
 
-    public Car(int position,String name){
+    public Car(int position, String name) {
         nameRangeValid(name);
         this.position = position;
         this.name = name;
     }
 
-    private void nameRangeValid(String name){
-        if(name.length() > 5){
+    private void nameRangeValid(String name) {
+        if (name.length() > 5) {
             throw new CarException("이름은 5자를 넘길 수 없습니다.");
+        }
+    }
+
+    public void move(int number) {
+        if (number > 5) {
+            position++;
         }
     }
 
@@ -25,7 +31,7 @@ public class Car {
         return position;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
@@ -41,4 +47,5 @@ public class Car {
     public int hashCode() {
         return Objects.hash(position, name);
     }
+
 }
