@@ -26,6 +26,10 @@ public class Cars {
         this.carList = carList;
     }
 
+    public Cars(List<Car> carList){
+        this.carList = carList;
+    }
+
     private void splitValid(String names){
         if(!names.contains(",")){
             throw new CarsException("이름의 구분자는 콤마로 입력 되어야 합니다.");
