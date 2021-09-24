@@ -27,6 +27,19 @@ public class Winners {
 
     private List<String> judgeWinner(Cars cars){
         List<String> winners = new ArrayList<>();
+
+        for (int i = 0; i < cars.getCarList().size(); i++) {
+            Car car = cars.getCarList().get(i);
+
+            if(car.getPosition() == getMaxPosition()){
+                winners.add(car.getName());
+            }
+        }
+
+        return winners;
+    }
+
+    private int getMaxPosition(){
         List<Integer> carsPosition = new ArrayList<>();
 
         for (int i = 0; i < cars.getCarList().size(); i++) {
@@ -36,14 +49,7 @@ public class Winners {
 
         int maxPosition = Collections.max(carsPosition);
 
-        for (int i = 0; i < cars.getCarList().size(); i++) {
-            Car car = cars.getCarList().get(i);
-
-            if(car.getPosition() == maxPosition){
-                winners.add(car.getName());
-            }
-        }
-
-        return winners;
+        return maxPosition;
     }
+
 }
