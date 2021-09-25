@@ -1,6 +1,6 @@
-package carRacing;
+package carracing;
 
-import carRacing.exception.CarException;
+import carracing.exception.CarException;
 
 import java.util.Objects;
 

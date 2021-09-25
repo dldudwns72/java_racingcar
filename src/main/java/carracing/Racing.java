@@ -1,4 +1,4 @@
-package carRacing;
+package carracing;
 
 import java.util.Random;
 
@@ -10,10 +10,13 @@ public class Racing {
         this.cars=cars;
     }
 
-    public void game(int attemptCount){
+    public Cars game(int attemptCount){
+
         for (int i = 0; i < attemptCount; i++) {
             carMove();
         }
+
+        return this.cars;
     }
 
     private void carMove(){

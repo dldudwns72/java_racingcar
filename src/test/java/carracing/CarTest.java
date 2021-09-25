@@ -1,6 +1,6 @@
-package carRacing;
+package carracing;
 
-import carRacing.exception.CarException;
+import carracing.exception.CarException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
